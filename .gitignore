@@ -1,0 +1,12 @@
+/bootstrap/compiled.php
+/vendor
+/html
+composer.lock
+.DS_Store
+Thumbs.db
+.idea/*
+/workbench
+build.properties
+/public/.htaccess
+.vagrant
+/uploads/*
