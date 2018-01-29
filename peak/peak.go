@@ -49,7 +49,7 @@ func PeakDivide(nums []int) int {
 	return response
 }
 
-func FindIndex(nums []int) (int, bool) {
+func CheckForPeak(nums []int) (int, bool) {
 	half := len(nums) / 2
 
 	if len(nums) == 2 {
@@ -67,7 +67,7 @@ func PeakDivideConquer(nums []int) int {
 	looking := true
 
 	for looking {
-		if index, found := FindIndex(nums); found == true {
+		if index, found := CheckForPeak(nums); found == true {
 			response = index
 			looking = false
 			break
