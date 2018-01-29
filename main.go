@@ -1,16 +1,15 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
 
-func main()  {
-	var first int
-	var second int
-	_, err := fmt.Scanf("%d %d", &first, &second)
+	"github.com/jasonmichels/algorithms/peak"
+)
 
-	if err != nil {
-		fmt.Println("ERROR!!")
-	} else {
-		sum := first + second
-		fmt.Printf("%d + %d = %d \n", first, second, sum)
-	}
+func main() {
+	nums := peak.GenerateLargeNumSlice(8000000, 10000000)
+	// index := peak.PeakNaive(nums)
+	// index := peak.PeakDivide(nums)
+	index := peak.PeakDivideConquer(nums)
+	fmt.Printf("Return value: %v \n", index)
 }
