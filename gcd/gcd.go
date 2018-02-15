@@ -8,9 +8,9 @@ import (
 func gcdSlow(a int, b int) int {
 	var best int = 0
 
-	for i := 1; i <= a + b; i++ {
+	for i := 1; i <= a+b; i++ {
 
-		if math.Mod(float64(a), float64(i)) == 0 && math.Mod(float64(b), float64(i)) == 0 {		
+		if math.Mod(float64(a), float64(i)) == 0 && math.Mod(float64(b), float64(i)) == 0 {
 			best = i
 		}
 	}
@@ -18,7 +18,7 @@ func gcdSlow(a int, b int) int {
 	return best
 }
 
-func gcdFast(a int, b int) int{
+func gcdFast(a int, b int) int {
 	// fmt.Printf("%d ---- %d \n", a, b)
 	if b == 0 {
 		return a

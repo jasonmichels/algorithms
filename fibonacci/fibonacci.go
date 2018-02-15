@@ -2,7 +2,6 @@ package main
 
 import (
 	"fmt"
-	"runtime"
 	"time"
 )
 
@@ -11,7 +10,7 @@ func fibonacciSlow(n int) int {
 		return n
 	}
 
-	return fibonacciSlow(n - 1) + fibonacciSlow(n - 2)
+	return fibonacciSlow(n-1) + fibonacciSlow(n-2)
 }
 
 func fibonacciFast(n int) int {
@@ -19,28 +18,26 @@ func fibonacciFast(n int) int {
 		return n
 	}
 
-	numbers := make([]int, n + 1)
+	numbers := make([]int, n+1)
 	numbers[0] = 0
 	numbers[1] = 1
 
 	for i := 2; i <= n; i++ {
-		numbers[i] = numbers[i - 1] + numbers[i - 2]
+		numbers[i] = numbers[i-1] + numbers[i-2]
 	}
 
 	return numbers[n]
 }
 
 func printSlow() {
-	fmt.Printf("Slow: %d \n", fibonacciSlow(15))
+	fmt.Printf("Slow: %d \n", fibonacciSlow(25))
 }
 
 func printFast() {
-	fmt.Printf("Fast: %d \n", fibonacciFast(15))
+	fmt.Printf("Fast: %d \n", fibonacciFast(25))
 }
 
 func main() {
-
-	runtime.GOMAXPROCS(runtime.NumCPU())
 
 	go printSlow()
 	go printFast()
