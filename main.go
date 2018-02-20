@@ -2,13 +2,14 @@ package main
 
 import (
 	"fmt"
-	"github.com/jasonmichels/algorithms/peak"
+
+	is "github.com/jasonmichels/algorithms/insertion_sort"
+	"github.com/jasonmichels/algorithms/merge_sort"
 )
 
 func main() {
-	nums := peak.GenerateLargeNumSlice(8000000, 10000000)
-	// index := peak.PeakNaive(nums)
-	// index := peak.PeakDivide(nums)
-	index := peak.PeakDivideConquer(nums)
-	fmt.Printf("Return value: %v \n", index)
+	data := is.GenerateData(10)
+	result := merge_sort.Second(data)
+	fmt.Println(len(result))
+	fmt.Println(result)
 }

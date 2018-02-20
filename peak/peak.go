@@ -1,5 +1,10 @@
 package peak
 
+// Potential implementation
+// nums := peak.GenerateLargeNumSlice(8000000, 10000000)
+// index := peak.PeakDivideConquer(nums)
+// fmt.Printf("Return value: %v \n", index)
+
 func GenerateLargeNumSlice(peak, largest int) []int {
 	nums := make([]int, largest, largest)
 
